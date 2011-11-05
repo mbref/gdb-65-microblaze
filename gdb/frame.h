@@ -666,4 +666,7 @@ extern void deprecated_update_frame_pc_hack (struct frame_info *frame,
 extern void deprecated_update_frame_base_hack (struct frame_info *frame,
 					       CORE_ADDR base);
 
+/* Return the level of the frame. */
+extern int frame_level (struct frame_info *);
+
 #endif /* !defined (FRAME_H)  */

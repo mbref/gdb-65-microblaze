@@ -1556,6 +1556,12 @@ frame_sp_unwind (struct frame_info *next_frame)
   internal_error (__FILE__, __LINE__, _("Missing unwind SP method"));
 }
 
+int 
+frame_level (struct frame_info *frame)
+{
+  return frame->level;
+}
+
 extern initialize_file_ftype _initialize_frame; /* -Wmissing-prototypes */
 
 static struct cmd_list_element *set_backtrace_cmdlist;

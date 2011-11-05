@@ -1628,6 +1628,7 @@ init_page_info (void)
       lines_per_page = rows;
       chars_per_line = cols;
 
+#if 1
       /* Readline should have fetched the termcap entry for us.  */
       if (tgetnum ("li") < 0 || getenv ("EMACS"))
 	{
@@ -1636,6 +1637,9 @@ init_page_info (void)
 	     not useful (e.g. emacs shell window), so disable paging.  */
 	  lines_per_page = UINT_MAX;
 	}
+#else
+	  lines_per_page = UINT_MAX;
+#endif
 
       /* FIXME: Get rid of this junk.  */
 #if defined(SIGWINCH) && defined(SIGWINCH_HANDLER)

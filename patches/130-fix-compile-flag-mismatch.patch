@@ -1,0 +1,69 @@
+diff -purN gdb-6.5/gdb/configure gdb-6.5-patched/gdb/configure
+--- gdb-6.5/gdb/configure	2011-11-05 16:49:44.000000000 +0100
++++ gdb-6.5-patched/gdb/configure	2011-11-05 17:28:32.972671057 +0100
+@@ -309,7 +309,7 @@ ac_includes_default="\
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subdirs_all="$ac_subdirs_all doc testsuite"
++ac_subdirs_all="$ac_subdirs_all doc"
+ ac_subdirs_all="$ac_subdirs_all gdbtk"
+ ac_subdirs_all="$ac_subdirs_all multi-ice"
+ ac_subdirs_all="$ac_subdirs_all gdbserver"
+@@ -5939,7 +5939,7 @@ _ACEOF
+ 
+ 
+ 
+-subdirs="$subdirs doc testsuite"
++subdirs="$subdirs doc"
+ 
+ 
+ # Provide defaults for some variables set by the per-host and per-target
+diff -purN gdb-6.5/gdb/gdbserver/configure gdb-6.5-patched/gdb/gdbserver/configure
+--- gdb-6.5/gdb/gdbserver/configure	2011-11-05 16:49:45.000000000 +0100
++++ gdb-6.5-patched/gdb/gdbserver/configure	2011-11-05 17:28:32.972671057 +0100
+@@ -1239,7 +1239,7 @@ echo "$as_me: error: \`$ac_var' was not 
+       ac_cache_corrupted=: ;;
+     ,);;
+     *)
+-      if test "x$ac_old_val" != "x$ac_new_val"; then
++      if test "`echo $ac_old_val`" != "`echo $ac_new_val`"; then
+ 	{ echo "$as_me:$LINENO: error: \`$ac_var' has changed since the previous run:" >&5
+ echo "$as_me: error: \`$ac_var' has changed since the previous run:" >&2;}
+ 	{ echo "$as_me:$LINENO:   former value:  $ac_old_val" >&5
+diff -purN gdb-6.5/gdb/testsuite/configure gdb-6.5-patched/gdb/testsuite/configure
+--- gdb-6.5/gdb/testsuite/configure	2011-11-05 16:49:47.000000000 +0100
++++ gdb-6.5-patched/gdb/testsuite/configure	2011-11-05 17:28:32.972671057 +0100
+@@ -1248,7 +1248,7 @@ echo "$as_me: error: \`$ac_var' was not 
+       ac_cache_corrupted=: ;;
+     ,);;
+     *)
+-      if test "x$ac_old_val" != "x$ac_new_val"; then
++      if test "`echo $ac_old_val" != "`echo $ac_new_val"; then
+ 	{ echo "$as_me:$LINENO: error: \`$ac_var' has changed since the previous run:" >&5
+ echo "$as_me: error: \`$ac_var' has changed since the previous run:" >&2;}
+ 	{ echo "$as_me:$LINENO:   former value:  $ac_old_val" >&5
+diff -purN gdb-6.5/Makefile.in gdb-6.5-patched/Makefile.in
+--- gdb-6.5/Makefile.in	2011-11-05 16:49:44.000000000 +0100
++++ gdb-6.5-patched/Makefile.in	2011-11-05 17:28:32.992829280 +0100
+@@ -329,7 +329,7 @@ COMPILER_NM_FOR_TARGET=@COMPILER_NM_FOR_
+ # CFLAGS will be just -g.  We want to ensure that TARGET libraries
+ # (which we know are built with gcc) are built with optimizations so
+ # prepend -O2 when setting CFLAGS_FOR_TARGET.
+-CFLAGS_FOR_TARGET = -O2 $(CFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET)
++CFLAGS_FOR_TARGET = $(strip $(CFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET))
+ SYSROOT_CFLAGS_FOR_TARGET = @SYSROOT_CFLAGS_FOR_TARGET@
+ CXXFLAGS_FOR_TARGET = $(CXXFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET)
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)
+diff -purN gdb-6.5/Makefile.tpl gdb-6.5-patched/Makefile.tpl
+--- gdb-6.5/Makefile.tpl	2011-11-05 16:49:44.000000000 +0100
++++ gdb-6.5-patched/Makefile.tpl	2011-11-05 17:28:33.005166529 +0100
+@@ -332,7 +332,7 @@ COMPILER_NM_FOR_TARGET=@COMPILER_NM_FOR_
+ # CFLAGS will be just -g.  We want to ensure that TARGET libraries
+ # (which we know are built with gcc) are built with optimizations so
+ # prepend -O2 when setting CFLAGS_FOR_TARGET.
+-CFLAGS_FOR_TARGET = -O2 $(CFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET)
++CFLAGS_FOR_TARGET = $(strip $(CFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET))
+ SYSROOT_CFLAGS_FOR_TARGET = @SYSROOT_CFLAGS_FOR_TARGET@
+ CXXFLAGS_FOR_TARGET = $(CXXFLAGS) $(SYSROOT_CFLAGS_FOR_TARGET)
+ LIBCFLAGS_FOR_TARGET = $(CFLAGS_FOR_TARGET)

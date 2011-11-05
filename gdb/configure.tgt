@@ -19,6 +19,7 @@ i[34567]86*)		gdb_target_cpu=i386 ;;
 m68hc11*|m6811*)	gdb_target_cpu=m68hc11 ;;
 m68*)			gdb_target_cpu=m68k ;;
 m88*)			gdb_target_cpu=m88k ;;
+microblaze*)		gdb_target_cpu=microblaze ;;
 mips*)			gdb_target_cpu=mips ;;
 powerpc*)		gdb_target_cpu=powerpc ;;
 sparc*)			gdb_target_cpu=sparc ;;
@@ -130,6 +131,9 @@ m68*-*-os68k*)		gdb_target=os68k ;;
 m68*-*-uclinux*)	gdb_target=monitor ;;
 
 m88*-*-openbsd*)	gdb_target=obsd ;;
+
+microblaze*-linux-gnu)	gdb_target=linux ;;
+microblaze-xilinx-*)	gdb_target=microblaze ;;
 
 mips*-*-pe)		gdb_target=wince ;;
 mips*-sgi-irix5*)	gdb_target=irix5 ;;

@@ -1516,7 +1516,7 @@ load_command (char *arg, int from_tty)
    we don't want to run a subprocess.  On the other hand, I'm not sure how
    performance compares.  */
 
-static int download_write_size = 512;
+static int download_write_size = 4096;
 static void
 show_download_write_size (struct ui_file *file, int from_tty,
 			  struct cmd_list_element *c, const char *value)
