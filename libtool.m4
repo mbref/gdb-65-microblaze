@@ -751,6 +751,11 @@ netbsd* | knetbsd*-gnu)
   fi
   ;;
 
+linux-uclibc*)
+  lt_cv_deplibs_check_method=pass_all
+  lt_cv_file_magic_test_file=`echo /lib/libuClibc-*.so`
+  ;;
+
 newsos6)
   [lt_cv_deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [ML]SB (executable|dynamic lib)']
   lt_cv_file_magic_cmd=/usr/bin/file
