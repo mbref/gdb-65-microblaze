@@ -1248,7 +1248,7 @@ echo "$as_me: error: \`$ac_var' was not set in the previous run" >&2;}
       ac_cache_corrupted=: ;;
     ,);;
     *)
-      if test "x$ac_old_val" != "x$ac_new_val"; then
+      if test "`echo $ac_old_val" != "`echo $ac_new_val"; then
 	{ echo "$as_me:$LINENO: error: \`$ac_var' has changed since the previous run:" >&5
 echo "$as_me: error: \`$ac_var' has changed since the previous run:" >&2;}
 	{ echo "$as_me:$LINENO:   former value:  $ac_old_val" >&5

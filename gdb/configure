@@ -309,7 +309,7 @@ ac_includes_default="\
 # include <unistd.h>
 #endif"
 
-ac_subdirs_all="$ac_subdirs_all doc testsuite"
+ac_subdirs_all="$ac_subdirs_all doc"
 ac_subdirs_all="$ac_subdirs_all gdbtk"
 ac_subdirs_all="$ac_subdirs_all multi-ice"
 ac_subdirs_all="$ac_subdirs_all gdbserver"
@@ -5939,7 +5939,7 @@ _ACEOF
 
 
 
-subdirs="$subdirs doc testsuite"
+subdirs="$subdirs doc"
 
 
 # Provide defaults for some variables set by the per-host and per-target
