@@ -3042,8 +3042,8 @@ microblaze_bfd_write_imm_value_64 (bfd *abfd, bfd_byte *bfd_addr, bfd_vma val)
 
 #define TARGET_BIG_SYM          bfd_elf32_microblaze_vec
 #define TARGET_BIG_NAME		"elf32-microblaze"
-#define TARGET_LITTLE_SYM       bfd_elf32_microblazele_vec
-#define TARGET_LITTLE_NAME      "elf32-microblazele"
+#define TARGET_LITTLE_SYM       bfd_elf32_microblazeel_vec
+#define TARGET_LITTLE_NAME      "elf32-microblazeel"
 #define ELF_ARCH		bfd_arch_microblaze
 #define ELF_MACHINE_CODE	EM_MICROBLAZE
 #define ELF_MAXPAGESIZE		0x4   		/* 4k, if we ever have 'em */
